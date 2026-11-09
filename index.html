@@ -1,0 +1,2047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quality Heating &amp; Air | Heating, Cooling &amp; Indoor Air Quality in Utah</title>
+  <meta name="description" content="Quality Heating & Air provides dependable residential and light commercial heating, air conditioning, and indoor air quality services across the Wasatch Front. Call (801) 474-1089." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==========================================================================
+       CSS Custom Properties & Brand Palette
+       ========================================================================== */
+    :root {
+      --color-deep-blue: #0a5081;
+      --color-ice-blue: #27a8de;
+      --color-heating-red: #ef3a38;
+      --color-charcoal: #434244;
+      --color-white: #FFFFFF;
+
+      /* Derived Neutral & Tint Surfaces */
+      --color-bg-soft: #f4f8fb;
+      --color-bg-alt: #eef4f8;
+      --color-border: #d7e3ec;
+      --color-text-muted: #5f6368;
+      --color-dark-surface: #2d2c2e;
+
+      /* Layout & Spacing Tokens */
+      --container-max: 1220px;
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --shadow-card: 0 10px 30px -8px rgba(10, 80, 129, 0.08);
+      --shadow-elevated: 0 18px 40px -10px rgba(10, 80, 129, 0.15);
+      --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* ==========================================================================
+       Reset & Base Typography
+       ========================================================================== */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--color-charcoal);
+      background-color: var(--color-white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* Container */
+    .container {
+      width: min(100% - 2.5rem, var(--container-max));
+      margin-inline: auto;
+    }
+
+    /* Section Spacing */
+    .section {
+      padding-block: clamp(4rem, 7vw, 6.5rem);
+    }
+
+    /* Typography Helpers */
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-deep-blue);
+      background-color: rgba(39, 168, 222, 0.12);
+      border-left: 3px solid var(--color-ice-blue);
+      padding: 0.35rem 0.75rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin-bottom: 1rem;
+    }
+
+    .eyebrow--red {
+      color: var(--color-heating-red);
+      background-color: rgba(239, 58, 56, 0.1);
+      border-left-color: var(--color-heating-red);
+    }
+
+    .section-title {
+      font-size: clamp(1.85rem, 3.5vw, 2.75rem);
+      font-weight: 800;
+      line-height: 1.18;
+      color: var(--color-deep-blue);
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      font-size: clamp(1rem, 1.4vw, 1.15rem);
+      color: var(--color-charcoal);
+      max-width: 68ch;
+      opacity: 0.9;
+    }
+
+    /* Dual-Tone Brand Accent Bar (No graphics, pure CSS) */
+    .thermal-bar {
+      display: flex;
+      width: 100%;
+      height: 5px;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-block: 1.25rem;
+    }
+
+    .thermal-bar--short {
+      width: 96px;
+    }
+
+    .thermal-bar__heat {
+      flex: 1;
+      background-color: var(--color-heating-red);
+    }
+
+    .thermal-bar__mid {
+      flex: 1;
+      background-color: var(--color-deep-blue);
+    }
+
+    .thermal-bar__cool {
+      flex: 1;
+      background-color: var(--color-ice-blue);
+    }
+
+    /* ==========================================================================
+       Buttons
+       ========================================================================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: inherit;
+      font-size: 0.975rem;
+      font-weight: 700;
+      padding: 0.9rem 1.65rem;
+      border-radius: var(--radius-sm);
+      border: 2px solid transparent;
+      cursor: pointer;
+      text-align: center;
+      transition: all var(--transition-fast);
+      white-space: nowrap;
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+    }
+
+    .btn--primary {
+      background-color: var(--color-heating-red);
+      color: var(--color-white);
+      box-shadow: 0 6px 18px rgba(239, 58, 56, 0.28);
+    }
+
+    .btn--primary:hover,
+    .btn--primary:focus-visible {
+      background-color: #d62b29;
+      box-shadow: 0 8px 22px rgba(239, 58, 56, 0.38);
+      transform: translateY(-1px);
+    }
+
+    .btn--secondary {
+      background-color: var(--color-deep-blue);
+      color: var(--color-white);
+    }
+
+    .btn--secondary:hover,
+    .btn--secondary:focus-visible {
+      background-color: var(--color-ice-blue);
+      color: var(--color-white);
+      transform: translateY(-1px);
+    }
+
+    .btn--outline {
+      background-color: transparent;
+      color: var(--color-deep-blue);
+      border-color: var(--color-deep-blue);
+    }
+
+    .btn--outline:hover,
+    .btn--outline:focus-visible {
+      background-color: var(--color-deep-blue);
+      color: var(--color-white);
+    }
+
+    /* ==========================================================================
+       Top Utility Bar & Sticky Header
+       ========================================================================== */
+    .utility-bar {
+      background-color: var(--color-deep-blue);
+      color: var(--color-white);
+      font-size: 0.825rem;
+      padding-block: 0.5rem;
+      border-bottom: 2px solid var(--color-ice-blue);
+    }
+
+    .utility-bar__inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem 1.5rem;
+    }
+
+    .utility-bar__info {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.4rem 1.5rem;
+    }
+
+    .utility-bar__tag {
+      display: inline-block;
+      background-color: var(--color-heating-red);
+      color: var(--color-white);
+      font-weight: 700;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      margin-right: 0.4rem;
+    }
+
+    .utility-bar a {
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .utility-bar a:hover {
+      color: var(--color-ice-blue);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--color-border);
+      box-shadow: 0 4px 20px rgba(10, 80, 129, 0.05);
+    }
+
+    .site-header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+      padding-block: 0.85rem;
+    }
+
+    .brand-logo {
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .brand-logo img {
+      height: clamp(46px, 6vw, 64px);
+      width: auto;
+      display: block;
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(1rem, 2.2vw, 2.25rem);
+    }
+
+    .site-nav__link {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--color-charcoal);
+      padding-block: 0.35rem;
+      position: relative;
+    }
+
+    .site-nav__link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--color-ice-blue);
+      transition: width var(--transition-fast);
+    }
+
+    .site-nav__link:hover {
+      color: var(--color-deep-blue);
+    }
+
+    .site-nav__link:hover::after {
+      width: 100%;
+    }
+
+    .header-cta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .header-phone {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-end;
+      line-height: 1.15;
+      padding: 0.45rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--color-deep-blue);
+      background-color: var(--color-bg-soft);
+    }
+
+    .header-phone__label {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      color: var(--color-deep-blue);
+    }
+
+    .header-phone__number {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--color-heating-red);
+    }
+
+    .header-phone:hover {
+      background-color: var(--color-deep-blue);
+    }
+
+    .header-phone:hover .header-phone__label,
+    .header-phone:hover .header-phone__number {
+      color: var(--color-white);
+    }
+
+    /* Mobile Menu Toggle Button (Pure CSS Bars) */
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 0.55rem 0.75rem;
+      font-family: inherit;
+      font-size: 0.825rem;
+      font-weight: 700;
+      color: var(--color-deep-blue);
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       Hero Section (Typographic & Architectural Layout — Zero External Graphics)
+       ========================================================================== */
+    .hero {
+      position: relative;
+      background: linear-gradient(180deg, var(--color-bg-soft) 0%, var(--color-white) 100%);
+      padding-block: clamp(3.5rem, 7vw, 6rem);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .hero__grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.95fr;
+      gap: clamp(2rem, 4vw, 4rem);
+      align-items: center;
+    }
+
+    .hero__title {
+      font-size: clamp(2.15rem, 4.5vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      color: var(--color-deep-blue);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero__title-heat {
+      color: var(--color-heating-red);
+    }
+
+    .hero__title-cool {
+      color: var(--color-ice-blue);
+    }
+
+    .hero__lead {
+      font-size: clamp(1.05rem, 1.45vw, 1.225rem);
+      color: var(--color-charcoal);
+      margin-bottom: 2rem;
+      max-width: 60ch;
+    }
+
+    .hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Trust Highlights Row */
+    .hero__highlights {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem 1.25rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .highlight-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      font-size: 0.925rem;
+      font-weight: 600;
+      color: var(--color-charcoal);
+    }
+
+    .highlight-marker {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
+      background-color: var(--color-ice-blue);
+      margin-top: 0.42rem;
+      flex-shrink: 0;
+    }
+
+    .highlight-item:nth-child(odd) .highlight-marker {
+      background-color: var(--color-heating-red);
+    }
+
+    /* Right Hero Architectural Status Card */
+    .hero-panel {
+      background-color: var(--color-white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-elevated);
+      overflow: hidden;
+    }
+
+    .hero-panel__top {
+      background-color: var(--color-deep-blue);
+      color: var(--color-white);
+      padding: 1.5rem 1.75rem;
+      border-bottom: 4px solid var(--color-ice-blue);
+    }
+
+    .hero-panel__kicker {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      color: var(--color-ice-blue);
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-panel__heading {
+      font-size: 1.35rem;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    .hero-panel__body {
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.15rem;
+    }
+
+    .panel-stat {
+      padding: 1rem 1.15rem;
+      border-radius: var(--radius-md);
+      background-color: var(--color-bg-soft);
+      border-left: 4px solid var(--color-deep-blue);
+    }
+
+    .panel-stat--heat {
+      border-left-color: var(--color-heating-red);
+    }
+
+    .panel-stat--cool {
+      border-left-color: var(--color-ice-blue);
+    }
+
+    .panel-stat__title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--color-deep-blue);
+      margin-bottom: 0.2rem;
+    }
+
+    .panel-stat__desc {
+      font-size: 0.875rem;
+      color: var(--color-charcoal);
+    }
+
+    .hero-panel__footer {
+      padding: 1.15rem 1.75rem;
+      background-color: var(--color-bg-alt);
+      border-top: 1px solid var(--color-border);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      font-size: 0.875rem;
+    }
+
+    .hero-panel__footer strong {
+      color: var(--color-deep-blue);
+    }
+
+    /* ==========================================================================
+       Services Section (#services)
+       ========================================================================== */
+    .services-section {
+      background-color: var(--color-white);
+    }
+
+    .section-header {
+      margin-bottom: clamp(2.5rem, 4vw, 3.5rem);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.75rem;
+      align-items: stretch;
+    }
+
+    .service-card {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-elevated);
+    }
+
+    .service-card__accent {
+      height: 7px;
+      width: 100%;
+    }
+
+    .service-card--heating .service-card__accent {
+      background-color: var(--color-heating-red);
+    }
+
+    .service-card--cooling .service-card__accent {
+      background-color: var(--color-ice-blue);
+    }
+
+    .service-card--iaq .service-card__accent {
+      background-color: var(--color-deep-blue);
+    }
+
+    .service-card__content {
+      padding: clamp(1.5rem, 2.5vw, 2.15rem);
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .service-card__tag {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      padding: 0.25rem 0.65rem;
+      border-radius: 4px;
+      margin-bottom: 0.85rem;
+    }
+
+    .service-card--heating .service-card__tag {
+      background-color: rgba(239, 58, 56, 0.1);
+      color: var(--color-heating-red);
+    }
+
+    .service-card--cooling .service-card__tag {
+      background-color: rgba(39, 168, 222, 0.12);
+      color: var(--color-deep-blue);
+    }
+
+    .service-card--iaq .service-card__tag {
+      background-color: rgba(10, 80, 129, 0.1);
+      color: var(--color-deep-blue);
+    }
+
+    .service-card__title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--color-deep-blue);
+      margin-bottom: 0.65rem;
+      line-height: 1.25;
+    }
+
+    .service-card__summary {
+      font-size: 0.94rem;
+      color: var(--color-charcoal);
+      margin-bottom: 1.5rem;
+    }
+
+    .service-list {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      border-top: 1px solid var(--color-border);
+      padding-top: 1.35rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-list__item {
+      position: relative;
+      padding-left: 1.15rem;
+      font-size: 0.925rem;
+      line-height: 1.45;
+    }
+
+    .service-list__item strong {
+      display: block;
+      color: var(--color-charcoal);
+      font-weight: 700;
+    }
+
+    .service-list__item span {
+      display: block;
+      font-size: 0.84rem;
+      color: var(--color-text-muted);
+      margin-top: 0.1rem;
+    }
+
+    .service-list__item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.48rem;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+    }
+
+    .service-card--heating .service-list__item::before {
+      background-color: var(--color-heating-red);
+    }
+
+    .service-card--cooling .service-list__item::before {
+      background-color: var(--color-ice-blue);
+    }
+
+    .service-card--iaq .service-list__item::before {
+      background-color: var(--color-deep-blue);
+    }
+
+    .service-card__link {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--color-deep-blue);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding-top: 0.5rem;
+    }
+
+    .service-card__link:hover {
+      color: var(--color-heating-red);
+    }
+
+    /* Mechanical Standards Banner below Services */
+    .standards-strip {
+      margin-top: 2.5rem;
+      background-color: var(--color-bg-soft);
+      border: 1px solid var(--color-border);
+      border-left: 5px solid var(--color-deep-blue);
+      border-radius: var(--radius-md);
+      padding: 1.5rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+    }
+
+    .standards-strip__text h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--color-deep-blue);
+      margin-bottom: 0.2rem;
+    }
+
+    .standards-strip__text p {
+      font-size: 0.925rem;
+      color: var(--color-charcoal);
+    }
+
+    /* ==========================================================================
+       About / Sister Company Heritage Section (#about)
+       ========================================================================== */
+    .about-section {
+      background-color: var(--color-deep-blue);
+      color: var(--color-white);
+      position: relative;
+      border-top: 5px solid var(--color-heating-red);
+      border-bottom: 5px solid var(--color-ice-blue);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: clamp(2rem, 4.5vw, 4rem);
+      align-items: center;
+    }
+
+    .about-section .eyebrow {
+      background-color: rgba(255, 255, 255, 0.12);
+      color: var(--color-white);
+      border-left-color: var(--color-ice-blue);
+    }
+
+    .about-section .section-title {
+      color: var(--color-white);
+    }
+
+    .about-copy p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.92);
+      margin-bottom: 1.25rem;
+    }
+
+    .about-sister-box {
+      background-color: var(--color-white);
+      color: var(--color-charcoal);
+      border-radius: var(--radius-md);
+      padding: clamp(1.75rem, 3vw, 2.35rem);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.22);
+      border-top: 6px solid var(--color-ice-blue);
+    }
+
+    .about-sister-box__badge {
+      display: inline-block;
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-deep-blue);
+      background-color: var(--color-bg-soft);
+      padding: 0.3rem 0.65rem;
+      border-radius: 4px;
+      margin-bottom: 0.85rem;
+    }
+
+    .about-sister-box h3 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--color-deep-blue);
+      margin-bottom: 0.75rem;
+      line-height: 1.25;
+    }
+
+    .about-sister-box p {
+      font-size: 0.95rem;
+      color: var(--color-charcoal);
+      margin-bottom: 1.25rem;
+    }
+
+    .values-pillars {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .value-pillar {
+      background-color: var(--color-bg-soft);
+      border: 1px solid var(--color-border);
+      padding: 0.65rem 0.85rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-deep-blue);
+    }
+
+    .sister-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      font-size: 0.925rem;
+      color: var(--color-heating-red);
+      border-bottom: 2px solid var(--color-heating-red);
+      padding-bottom: 0.15rem;
+    }
+
+    .sister-link:hover {
+      color: var(--color-deep-blue);
+      border-bottom-color: var(--color-deep-blue);
+    }
+
+    /* ==========================================================================
+       Service Area Section (#service-area)
+       ========================================================================== */
+    .area-section {
+      background-color: var(--color-bg-soft);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .cities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
+      gap: 0.85rem;
+      margin-top: 2rem;
+    }
+
+    .city-pill {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-left: 4px solid var(--color-deep-blue);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1.1rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--color-charcoal);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 6px rgba(10, 80, 129, 0.04);
+      transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .city-pill:nth-child(3n+1) {
+      border-left-color: var(--color-deep-blue);
+    }
+
+    .city-pill:nth-child(3n+2) {
+      border-left-color: var(--color-ice-blue);
+    }
+
+    .city-pill:nth-child(3n+3) {
+      border-left-color: var(--color-heating-red);
+    }
+
+    .city-pill:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(10, 80, 129, 0.1);
+      color: var(--color-deep-blue);
+    }
+
+    .city-pill__state {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-text-muted);
+      background-color: var(--color-bg-soft);
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+    }
+
+    .area-note {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.95rem;
+      color: var(--color-charcoal);
+    }
+
+    .area-note a {
+      color: var(--color-heating-red);
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    /* ==========================================================================
+       Contact & Scheduling Section (#contact)
+       ========================================================================== */
+    .contact-section {
+      background-color: var(--color-white);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.92fr 1.28fr;
+      gap: clamp(2rem, 4vw, 3.5rem);
+      align-items: start;
+    }
+
+    /* Left Column: Company Info Card */
+    .contact-info-card {
+      background-color: var(--color-charcoal);
+      color: var(--color-white);
+      border-radius: var(--radius-lg);
+      padding: clamp(1.75rem, 3vw, 2.5rem);
+      border-top: 6px solid var(--color-heating-red);
+      box-shadow: var(--shadow-elevated);
+    }
+
+    .contact-info-card__title {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--color-white);
+      margin-bottom: 0.35rem;
+    }
+
+    .contact-info-card__subtitle {
+      font-size: 0.925rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 1.75rem;
+    }
+
+    .info-blocks {
+      display: flex;
+      flex-direction: column;
+      gap: 1.35rem;
+    }
+
+    .info-block {
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .info-block:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .info-block__label {
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-ice-blue);
+      margin-bottom: 0.35rem;
+    }
+
+    .info-block__value {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--color-white);
+      line-height: 1.45;
+    }
+
+    .info-block__value--large {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--color-white);
+    }
+
+    .info-block__value a:hover {
+      color: var(--color-ice-blue);
+      text-decoration: underline;
+    }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.95rem;
+      padding-block: 0.2rem;
+    }
+
+    .hours-row span:first-child {
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .hours-row span:last-child {
+      font-weight: 700;
+      color: var(--color-white);
+    }
+
+    /* Right Column: Service Request Form */
+    .contact-form-card {
+      background-color: var(--color-bg-soft);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: clamp(1.75rem, 3.5vw, 2.75rem);
+      box-shadow: var(--shadow-card);
+    }
+
+    .contact-form-card__title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--color-deep-blue);
+      margin-bottom: 0.35rem;
+    }
+
+    .contact-form-card__desc {
+      font-size: 0.925rem;
+      color: var(--color-charcoal);
+      margin-bottom: 1.75rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.15rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group--full {
+      grid-column: 1 / -1;
+    }
+
+    .form-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-deep-blue);
+    }
+
+    .form-label .req {
+      color: var(--color-heating-red);
+    }
+
+    .form-control {
+      width: 100%;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--color-charcoal);
+      background-color: var(--color-white);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 0.9rem;
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--color-ice-blue);
+      box-shadow: 0 0 0 3px rgba(39, 168, 222, 0.18);
+    }
+
+    textarea.form-control {
+      min-height: 115px;
+      resize: vertical;
+    }
+
+    .form-error {
+      display: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-heating-red);
+    }
+
+    .form-group.has-error .form-control {
+      border-color: var(--color-heating-red);
+      background-color: #fff8f8;
+    }
+
+    .form-group.has-error .form-error {
+      display: block;
+    }
+
+    .form-submit-row {
+      margin-top: 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .form-privacy-note {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+    }
+
+    /* Confirmation State Box */
+    .form-confirmation {
+      display: none;
+      background-color: var(--color-white);
+      border: 2px solid var(--color-deep-blue);
+      border-left: 7px solid var(--color-ice-blue);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+    }
+
+    .form-confirmation.is-visible {
+      display: block;
+    }
+
+    .form-confirmation__badge {
+      display: inline-block;
+      background-color: var(--color-deep-blue);
+      color: var(--color-white);
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.25rem 0.65rem;
+      border-radius: 4px;
+      margin-bottom: 0.75rem;
+    }
+
+    .form-confirmation h4 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--color-deep-blue);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-confirmation p {
+      font-size: 0.95rem;
+      color: var(--color-charcoal);
+      margin-bottom: 1.25rem;
+    }
+
+    .summary-dl {
+      background-color: var(--color-bg-soft);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.25rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.65rem 1rem;
+      font-size: 0.875rem;
+    }
+
+    .summary-dl div strong {
+      display: block;
+      color: var(--color-deep-blue);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ==========================================================================
+       Footer (Zero Social Links)
+       ========================================================================== */
+    .site-footer {
+      background-color: var(--color-charcoal);
+      color: var(--color-white);
+      border-top: 5px solid var(--color-deep-blue);
+      padding-top: 3.5rem;
+      padding-bottom: 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.85fr 1fr;
+      gap: clamp(2rem, 4vw, 3.5rem);
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .footer-logo-box {
+      display: inline-block;
+      background-color: var(--color-white);
+      padding: 0.65rem 1rem;
+      border-radius: var(--radius-sm);
+      margin-bottom: 1rem;
+    }
+
+    .footer-logo-box img {
+      height: 52px;
+      width: auto;
+      display: block;
+    }
+
+    .footer-about p {
+      font-size: 0.925rem;
+      color: rgba(255, 255, 255, 0.84);
+      max-width: 44ch;
+      margin-bottom: 1rem;
+    }
+
+    .footer-heading {
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-ice-blue);
+      margin-bottom: 1rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      font-size: 0.925rem;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.86);
+    }
+
+    .footer-links a:hover {
+      color: var(--color-ice-blue);
+      padding-left: 4px;
+    }
+
+    .footer-contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      font-size: 0.925rem;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .footer-contact-list strong {
+      color: var(--color-white);
+    }
+
+    .footer-contact-list a:hover {
+      color: var(--color-ice-blue);
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      padding-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.825rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .footer-bottom a {
+      color: var(--color-ice-blue);
+      font-weight: 600;
+    }
+
+    .footer-bottom a:hover {
+      text-decoration: underline;
+    }
+
+    /* ==========================================================================
+       Responsive Breakpoints
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .hero__grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .utility-bar__inner {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .site-header__inner {
+        flex-wrap: wrap;
+      }
+
+      .site-nav {
+        display: none;
+        width: 100%;
+        order: 4;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding-block: 0.5rem;
+        border-top: 1px solid var(--color-border);
+      }
+
+      .site-nav.is-open {
+        display: flex;
+      }
+
+      .site-nav__link {
+        width: 100%;
+        padding: 0.65rem 0.25rem;
+        border-bottom: 1px solid var(--color-bg-alt);
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero__highlights,
+      .values-pillars,
+      .form-grid,
+      .summary-dl,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .header-phone__label {
+        display: none;
+      }
+
+      .header-phone {
+        padding: 0.45rem 0.7rem;
+      }
+
+      .header-phone__number {
+        font-size: 0.92rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Utility Bar -->
+  <div class="utility-bar">
+    <div class="container utility-bar__inner">
+      <div class="utility-bar__info">
+        <span><span class="utility-bar__tag">Utah HVAC</span> 2970 S West Temple Unit A, South Salt Lake, UT 84115</span>
+        <span>Mon–Fri: 9:00AM – 6:00PM | Sat–Sun: Scheduling Only</span>
+      </div>
+      <div>
+        Sister Company to <a href="https://qualitypoolandspa.com/about.html" target="_blank" rel="noopener">Quality Pool &amp; Spa</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Sticky Header -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="#top" class="brand-logo" aria-label="Quality Heating & Air Home">
+        <img src="logo-temp.png" alt="Quality Heating & Air Logo" />
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary Navigation">
+        <a href="#services" class="site-nav__link">Services</a>
+        <a href="#about" class="site-nav__link">About Us</a>
+        <a href="#service-area" class="site-nav__link">Service Area</a>
+        <a href="#contact" class="site-nav__link">Contact</a>
+      </nav>
+
+      <div class="header-cta">
+        <a href="tel:8014741089" class="header-phone" aria-label="Call Quality Heating and Air at (801) 474-1089">
+          <span class="header-phone__label">Call Dispatch</span>
+          <span class="header-phone__number">(801) 474-1089</span>
+        </a>
+        <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav">
+          Menu
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <span class="eyebrow">Residential &amp; Light Commercial HVAC</span>
+          <h1 class="hero__title">
+            Dependable <span class="hero__title-heat">Heating</span>, Precision <span class="hero__title-cool">Cooling</span> &amp; Clean Indoor Air Across the Wasatch Front.
+          </h1>
+          <p class="hero__lead">
+            From freezing Utah winter nights to peak summer heatwaves, <strong>Quality Heating &amp; Air</strong> delivers honest diagnostics, code-compliant installations, and responsive mechanical service built to last.
+          </p>
+
+          <div class="hero__actions">
+            <a href="#contact" class="btn btn--primary">Request Service</a>
+            <a href="#services" class="btn btn--outline">Explore Our Services</a>
+          </div>
+
+          <div class="hero__highlights">
+            <div class="highlight-item">
+              <span class="highlight-marker"></span>
+              <span>Experienced HVAC Technicians</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-marker"></span>
+              <span>Transparent, Upfront Pricing</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-marker"></span>
+              <span>Fast Local Wasatch Front Dispatch</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-marker"></span>
+              <span>Sister Company to Quality Pool &amp; Spa</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Architectural Status Card -->
+        <aside class="hero-panel" aria-label="Service Overview">
+          <div class="hero-panel__top">
+            <div class="hero-panel__kicker">South Salt Lake Headquarters</div>
+            <h2 class="hero-panel__heading">Year-Round Climate Control</h2>
+          </div>
+          <div class="hero-panel__body">
+            <div class="panel-stat panel-stat--heat">
+              <div class="panel-stat__title">High-Efficiency Heating</div>
+              <div class="panel-stat__desc">Furnace diagnostics, heat exchangers, boilers, heat pumps, and winter safety tune-ups.</div>
+            </div>
+            <div class="panel-stat panel-stat--cool">
+              <div class="panel-stat__title">Precision Air Conditioning</div>
+              <div class="panel-stat__desc">Central A/C repair, SEER2 system upgrades, refrigerant recharge, and ductless mini-splits.</div>
+            </div>
+            <div class="panel-stat">
+              <div class="panel-stat__title">Air Quality, Ducts &amp; Controls</div>
+              <div class="panel-stat__desc">Whole-home humidifiers, air scrubbers, HEPA filtration, smart zoning, and commercial RTUs.</div>
+            </div>
+          </div>
+          <div class="hero-panel__footer">
+            <span>Direct Scheduling: <strong>(801) 474-1089</strong></span>
+            <a href="mailto:office@qheatingandair.com" style="color: var(--color-deep-blue); font-weight: 700;">office@qheatingandair.com</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services-section" id="services">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Full-Service Mechanical Capabilities</span>
+          <h2 class="section-title">Comprehensive Heating, Cooling &amp; Mechanical Services</h2>
+          <div class="thermal-bar thermal-bar--short">
+            <span class="thermal-bar__heat"></span>
+            <span class="thermal-bar__mid"></span>
+            <span class="thermal-bar__cool"></span>
+          </div>
+          <p class="section-subtitle">
+            We service, repair, and install all major residential and light commercial HVAC equipment makes and models—engineered specifically for Utah's high-desert elevation and seasonal extremes.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Heating Services Card -->
+          <article class="service-card service-card--heating">
+            <div class="service-card__accent"></div>
+            <div class="service-card__content">
+              <span class="service-card__tag">Winter Comfort</span>
+              <h3 class="service-card__title">Heating Services</h3>
+              <p class="service-card__summary">
+                Reliable furnace and heating solutions to keep your family or business warm, safe, and energy-efficient through freezing Utah winters.
+              </p>
+              <ul class="service-list">
+                <li class="service-list__item">
+                  <strong>Furnace Repair &amp; Diagnostics</strong>
+                  <span>Ignitors, blower motors, flame sensors, limit switches, and airflow troubleshooting.</span>
+                </li>
+                <li class="service-list__item">
+                  <strong>High-Efficiency Furnace Installation &amp; Replacement</strong>
+                  <span>Proper Manual J load sizing and multi-stage / variable-speed gas furnace upgrades.</span>
+                </li>
+                <li class="service-list__item">
+                  <strong>Heat Pump Systems &amp; Boilers</strong>
+                  <span>Dual-fuel cold-climate heat pumps, hydronic heating, and radiant system service.</span>
+                </li>
+                <li class="service-list__item">
+                  <strong>Seasonal Heating Tune-Ups &amp; Safety Inspections</strong>
+                  <span>Combustion analysis, carbon monoxide testing, and heat exchanger inspections.</span>
+                </li>
+              </ul>
+              <a href="#contact" class="service-card__link" data-service-select="Heating Repair or Installation">
+                Schedule Heating Service &rarr;
+              </a>
+            </div>
+          </article>
+
+          <!-- Air Conditioning Services Card -->
+          <article class="service-card service-card--cooling">
+            <div class="service-card__accent"></div>
+            <div class="service-card__content">
+              <span class="service-card__tag">Summer Relief</span>
+              <h3 class="service-card__title">Air Conditioning Services</h3>
+              <p class="service-card__summary">
+                High-performance cooling repairs and modern system installations designed to handle triple-digit Wasatch Front summer afternoons.
+              </p>
+              <ul class="service-list">
+                <li class="service-list__item">
+                  <strong>Central A/C Repair &amp; Emergency Troubleshooting</strong>
+                  <span>Capacitors, contactors, refrigerant leak detection, frozen coils, and compressor care.</span>
+                </li>
+                <li class="service-list__item">
+                  <strong>New Air Conditioner Installation &amp; Upgrades</strong>
+                  <span>High-efficiency SEER2 condensers, matched evaporator coils, and quiet operation.</span>
+                </li>
+                <li class="service-list__item">
+                  <strong>Ductless Mini-Split Systems</strong>
+                  <span>Targeted room-by-room cooling and heating for additions, garages, and bonus rooms.</span>
+                </li>
+                <li class="service-list__item">
+                  <strong>Spring/Summer A/C Preventative Maintenance</strong>
+                  <span>Condenser coil cleaning, refrigerant pressure checks, and condensate drain clearing.</span>
+                </li>
+              </ul>
+              <a href="#contact" class="service-card__link" data-service-select="A/C Repair or Installation">
+                Schedule Cooling Service &rarr;
+              </a>
+            </div>
+          </article>
+
+          <!-- Indoor Air Quality, Ductwork & Controls Card -->
+          <article class="service-card service-card--iaq">
+            <div class="service-card__accent"></div>
+            <div class="service-card__content">
+              <span class="service-card__tag">Airflow &amp; Controls</span>
+              <h3 class="service-card__title">Indoor Air Quality, Ductwork &amp; Controls</h3>
+              <p class="service-card__summary">
+                Eliminate hot and cold spots, combat Utah's dry air and seasonal inversions, and optimize your building's mechanical performance.
+              </p>
+              <ul class="service-list">
+                <li class="service-list__item">
+                  <strong>Smart Thermostat Installation &amp; Zoning Controls</strong>
+                  <span>Wi-Fi thermostats, motorized zone dampers, and multi-floor temperature balancing.</span>
+                </li>
+                <li class="service-list__item">
+                  <strong>Whole-Home Humidifiers, Air Scrubbers &amp; Filtration</strong>
+                  <span>Steam/bypass humidifiers, UV-C germicidal purification, and high-MERV media filters.</span>
+                </li>
+                <li class="service-list__item">
+                  <strong>Ductwork Repair, Sealing &amp; Airflow Balancing</strong>
+                  <span>Custom sheet metal transitions, return air additions, and static pressure optimization.</span>
+                </li>
+                <li class="service-list__item">
+                  <strong>Light Commercial HVAC Service &amp; Maintenance</strong>
+                  <span>Rooftop package units (RTUs), commercial split systems, and scheduled filter/belt care.</span>
+                </li>
+              </ul>
+              <a href="#contact" class="service-card__link" data-service-select="Indoor Air Quality / Ductwork / Commercial">
+                Schedule Air Quality or Commercial Service &rarr;
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Mechanical Standards Strip -->
+        <div class="standards-strip">
+          <div class="standards-strip__text">
+            <h3>Not Sure What Your System Needs?</h3>
+            <p>Speak directly with our South Salt Lake team for straightforward answers and convenient scheduling.</p>
+          </div>
+          <div>
+            <a href="tel:8014741089" class="btn btn--secondary">Call (801) 474-1089</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About / Sister Company Heritage Section -->
+    <section class="section about-section" id="about">
+      <div class="container about-grid">
+        <div class="about-copy">
+          <span class="eyebrow">Our Utah Heritage</span>
+          <h2 class="section-title">Built on Proven Craftsmanship &amp; Local Accountability</h2>
+          <p>
+            <strong>Quality Heating &amp; Air</strong> was founded with a clear mission: to bring straightforward, master-level mechanical workmanship and honest customer care to homeowners and businesses throughout the Wasatch Front and Wasatch Back.
+          </p>
+          <p>
+            As the proud new sister company to <strong>Quality Pool &amp; Spa</strong>, our roots in Utah home comfort run deep. For years, Utah families have trusted the Quality name for technical precision, reliable scheduling, and standing behind every system we touch. Now, we bring that exact same dedication inside your home—ensuring your furnace, air conditioner, and indoor air quality perform flawlessly in every season.
+          </p>
+        </div>
+
+        <div class="about-sister-box">
+          <span class="about-sister-box__badge">Sister Company Tradition</span>
+          <h3>From Backyard Relaxation to Year-Round Indoor Climate Control</h3>
+          <p>
+            Whether maintaining complex mechanical equipment or engineering whole-home heating and cooling systems, our philosophy never changes: do the job right the first time, respect the customer's property, and communicate clearly.
+          </p>
+          <div class="values-pillars">
+            <div class="value-pillar">No High-Pressure Sales</div>
+            <div class="value-pillar">Code-Compliant Installs</div>
+            <div class="value-pillar">Respectful Clean Workspaces</div>
+            <div class="value-pillar">Long-Term System Care</div>
+          </div>
+          <a href="https://qualitypoolandspa.com/about.html" target="_blank" rel="noopener" class="sister-link">
+            Learn About Our Sister Company, Quality Pool &amp; Spa &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Area Section -->
+    <section class="section area-section" id="service-area">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow eyebrow--red">Wasatch Front &amp; Mountain Communities</span>
+          <h2 class="section-title">Communities We Proudly Serve</h2>
+          <p class="section-subtitle">
+            Centrally dispatched from our South Salt Lake shop at 2970 S West Temple, our service trucks cover Salt Lake, Utah, Davis, Weber, Summit, and Wasatch counties:
+          </p>
+        </div>
+
+        <ul class="cities-grid" aria-label="20 Utah Service Area Cities">
+          <li class="city-pill"><span>Salt Lake City</span><span class="city-pill__state">UT</span></li>
+          <li class="city-pill"><span>Sandy</span><span class="city-pill__state">UT</span></li>
+          <li class="city-pill"><span>Park City</span><span class="city-pill__state">UT</span></li>
+          <li class="city-pill"><span>Draper</span><span class="city-pill__state">UT</span></li>
+          <li class="city-pill"><span>Provo</span><span class="city-pill__state">UT</span></li>
+          <li class="city-pill"><span>South Jordan</span><span class="city-pill__state">UT</span></li>
+          <li class="city-pill"><span>Ogden</span><span class="city-pill__state">UT</span></li>
+          <li class="city-pill"><span>Heber City</span><span class="city-pill__state">UT</span></li>
+          <li class="city-pill"><span>West Jordan</span><span class="city-pill__state">UT</span></li>
+          <li class="city-pill"><span>Orem</span><span class="city-pill__state">UT</span></li>
+          <li class="city-pill"><span>Lehi</span><span class="city-pill__state">UT</span></li>
+          <li class="city-pill"><span>Bountiful</span><span class="city-pill__state">UT</span></li>
+          <li class="city-pill"><span>Layton</span><span class="city-pill__state">UT</span></li>
+          <li class="city-pill"><span>West Valley City</span><span class="city-pill__state">UT</span></li>
+          <li class="city-pill"><span>Alpine</span><span class="city-pill__state">UT</span></li>
+          <li class="city-pill"><span>Cottonwood Heights</span><span class="city-pill__state">UT</span></li>
+          <li class="city-pill"><span>Murray</span><span class="city-pill__state">UT</span></li>
+          <li class="city-pill"><span>Herriman</span><span class="city-pill__state">UT</span></li>
+          <li class="city-pill"><span>Clearfield</span><span class="city-pill__state">UT</span></li>
+          <li class="city-pill"><span>Riverton</span><span class="city-pill__state">UT</span></li>
+        </ul>
+
+        <p class="area-note">
+          Located in a neighboring community along the Wasatch Front? Give our office a call at <a href="tel:8014741089">(801) 474-1089</a> to confirm technician availability in your area.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact & Scheduling Section -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Get In Touch</span>
+          <h2 class="section-title">Contact Quality Heating &amp; Air</h2>
+          <p class="section-subtitle">
+            Reach out by phone, email, or our online scheduling request form below. Weekend inquiries are monitored for priority scheduling.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left Column: Company Information -->
+          <div class="contact-info-card">
+            <h3 class="contact-info-card__title">Quality Heating &amp; Air</h3>
+            <p class="contact-info-card__subtitle">Residential &amp; Commercial HVAC Service &amp; Installation</p>
+
+            <div class="info-blocks">
+              <div class="info-block">
+                <div class="info-block__label">Shop &amp; Office Address</div>
+                <div class="info-block__value">
+                  2970 S West Temple Unit A<br />
+                  South Salt Lake, UT 84115
+                </div>
+              </div>
+
+              <div class="info-block">
+                <div class="info-block__label">Operating Hours</div>
+                <div class="info-block__value">
+                  <div class="hours-row">
+                    <span>Mon–Fri:</span>
+                    <span>9:00AM - 6:00PM</span>
+                  </div>
+                  <div class="hours-row">
+                    <span>Sat–Sun:</span>
+                    <span>Scheduling Only</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-block">
+                <div class="info-block__label">Phone</div>
+                <div class="info-block__value info-block__value--large">
+                  <a href="tel:8014741089">(801) 474-1089</a>
+                </div>
+              </div>
+
+              <div class="info-block">
+                <div class="info-block__label">Email</div>
+                <div class="info-block__value">
+                  <a href="mailto:office@qheatingandair.com">office@qheatingandair.com</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Service Request Form -->
+          <div class="contact-form-card">
+            <div id="form-wrapper">
+              <h3 class="contact-form-card__title">Request Service or an Estimate</h3>
+              <p class="contact-form-card__desc">
+                Complete the form below and our dispatch coordinator will contact you promptly to confirm your appointment window.
+              </p>
+
+              <form id="service-form" novalidate>
+                <div class="form-grid">
+                  <!-- Full Name -->
+                  <div class="form-group" id="group-name">
+                    <label for="fullName" class="form-label">Full Name <span class="req">*</span></label>
+                    <input type="text" id="fullName" name="fullName" class="form-control" placeholder="Jane Doe" required />
+                    <span class="form-error">Please enter your full name.</span>
+                  </div>
+
+                  <!-- Phone Number -->
+                  <div class="form-group" id="group-phone">
+                    <label for="phone" class="form-label">Phone Number <span class="req">*</span></label>
+                    <input type="tel" id="phone" name="phone" class="form-control" placeholder="(801) 555-0199" required />
+                    <span class="form-error">Please enter a valid 10-digit phone number.</span>
+                  </div>
+
+                  <!-- Email Address -->
+                  <div class="form-group" id="group-email">
+                    <label for="email" class="form-label">Email Address <span class="req">*</span></label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="you@example.com" required />
+                    <span class="form-error">Please enter a valid email address.</span>
+                  </div>
+
+                  <!-- City Selection -->
+                  <div class="form-group" id="group-city">
+                    <label for="city" class="form-label">City <span class="req">*</span></label>
+                    <select id="city" name="city" class="form-control" required>
+                      <option value="">Select Your City...</option>
+                      <option value="Salt Lake City">Salt Lake City</option>
+                      <option value="Sandy">Sandy</option>
+                      <option value="Park City">Park City</option>
+                      <option value="Draper">Draper</option>
+                      <option value="Provo">Provo</option>
+                      <option value="South Jordan">South Jordan</option>
+                      <option value="Ogden">Ogden</option>
+                      <option value="Heber City">Heber City</option>
+                      <option value="West Jordan">West Jordan</option>
+                      <option value="Orem">Orem</option>
+                      <option value="Lehi">Lehi</option>
+                      <option value="Bountiful">Bountiful</option>
+                      <option value="Layton">Layton</option>
+                      <option value="West Valley City">West Valley City</option>
+                      <option value="Alpine">Alpine</option>
+                      <option value="Cottonwood Heights">Cottonwood Heights</option>
+                      <option value="Murray">Murray</option>
+                      <option value="Herriman">Herriman</option>
+                      <option value="Clearfield">Clearfield</option>
+                      <option value="Riverton">Riverton</option>
+                      <option value="Other Surrounding Utah Area">Other Surrounding Area</option>
+                    </select>
+                    <span class="form-error">Please select your city.</span>
+                  </div>
+
+                  <!-- Service Needed -->
+                  <div class="form-group" id="group-service">
+                    <label for="serviceType" class="form-label">Service Needed <span class="req">*</span></label>
+                    <select id="serviceType" name="serviceType" class="form-control" required>
+                      <option value="">Select Service Type...</option>
+                      <option value="Heating Repair or Installation">Heating Repair or Installation</option>
+                      <option value="A/C Repair or Installation">A/C Repair or Installation</option>
+                      <option value="Seasonal Maintenance / Tune-Up">Seasonal Maintenance / Tune-Up</option>
+                      <option value="Indoor Air Quality / Ductwork / Commercial">Thermostat, Air Quality or Ductwork</option>
+                      <option value="Light Commercial HVAC Service">Light Commercial HVAC Service</option>
+                      <option value="New System Estimate / Second Opinion">New System Estimate / Second Opinion</option>
+                      <option value="Other Inquiry">Other Inquiry</option>
+                    </select>
+                    <span class="form-error">Please select a service category.</span>
+                  </div>
+
+                  <!-- Preferred Date/Time -->
+                  <div class="form-group" id="group-time">
+                    <label for="preferredTime" class="form-label">Preferred Date / Window</label>
+                    <input type="text" id="preferredTime" name="preferredTime" class="form-control" placeholder="e.g., Tomorrow Morning / Next Tuesday" />
+                  </div>
+
+                  <!-- Message / System Details -->
+                  <div class="form-group form-group--full" id="group-message">
+                    <label for="message" class="form-label">System Details or How We Can Help <span class="req">*</span></label>
+                    <textarea id="message" name="message" class="form-control" placeholder="Tell us about your furnace, A/C, or comfort issue (e.g., noises, error codes, age of unit)..." required></textarea>
+                    <span class="form-error">Please briefly describe how we can help you.</span>
+                  </div>
+                </div>
+
+                <div class="form-submit-row">
+                  <p class="form-privacy-note">Your information goes directly to our South Salt Lake dispatch team.</p>
+                  <button type="submit" class="btn btn--primary">Submit Service Request</button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Interactive Submission Confirmation State -->
+            <div class="form-confirmation" id="form-confirmation" aria-live="polite">
+              <span class="form-confirmation__badge">Request Received</span>
+              <h4>Thank You, <span id="confirm-name">Valued Customer</span>!</h4>
+              <p>
+                We have logged your service request for <strong>Quality Heating &amp; Air</strong>. A member of our team will reach out to you shortly at <strong id="confirm-phone"></strong> to confirm your appointment.
+              </p>
+
+              <div class="summary-dl">
+                <div>
+                  <strong>Service Requested</strong>
+                  <span id="confirm-service"></span>
+                </div>
+                <div>
+                  <strong>Location</strong>
+                  <span id="confirm-city"></span>
+                </div>
+                <div>
+                  <strong>Preferred Window</strong>
+                  <span id="confirm-time"></span>
+                </div>
+                <div>
+                  <strong>Direct Office Line</strong>
+                  <span>(801) 474-1089</span>
+                </div>
+              </div>
+
+              <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+                <button type="button" class="btn btn--outline" id="reset-form-btn">Submit Another Request</button>
+                <a href="tel:8014741089" class="btn btn--secondary">Call Us Now: (801) 474-1089</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (Zero Social Media Links) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-logo-box">
+            <img src="logo-temp.png" alt="Quality Heating & Air Logo" />
+          </div>
+          <p>
+            Dependable residential and light commercial heating, cooling, and indoor air quality across the Wasatch Front. Proud sister company to <a href="https://qualitypoolandspa.com/about.html" target="_blank" rel="noopener" style="color: var(--color-ice-blue); text-decoration: underline;">Quality Pool &amp; Spa</a>.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#top">Back to Top</a></li>
+            <li><a href="#services">HVAC Services</a></li>
+            <li><a href="#about">About &amp; Heritage</a></li>
+            <li><a href="#service-area">Utah Service Area</a></li>
+            <li><a href="#contact">Schedule Service</a></li>
+            <li><a href="https://qualitypoolandspa.com/about.html" target="_blank" rel="noopener">Quality Pool &amp; Spa</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Company Information</h4>
+          <ul class="footer-contact-list">
+            <li><strong>Quality Heating &amp; Air</strong></li>
+            <li>2970 S West Temple Unit A<br />South Salt Lake, UT 84115</li>
+            <li><strong>Phone:</strong> <a href="tel:8014741089">(801) 474-1089</a></li>
+            <li><strong>Email:</strong> <a href="mailto:office@qheatingandair.com">office@qheatingandair.com</a></li>
+            <li><strong>Mon–Fri:</strong> 9:00AM - 6:00PM</li>
+            <li><strong>Sat–Sun:</strong> Scheduling Only</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year">2026</span> Quality Heating &amp; Air. All Rights Reserved.</p>
+        <p>Sister Company to <a href="https://qualitypoolandspa.com/about.html" target="_blank" rel="noopener">Quality Pool &amp; Spa</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Navigation & Form Validation Script -->
+  <script>
+    (function () {
+      // Set current year dynamically
+      var yearSpan = document.getElementById('current-year');
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+
+      // Mobile Navigation Toggle
+      var menuToggle = document.getElementById('menu-toggle');
+      var siteNav = document.getElementById('site-nav');
+
+      if (menuToggle && siteNav) {
+        menuToggle.addEventListener('click', function () {
+          var isOpen = siteNav.classList.toggle('is-open');
+          menuToggle.setAttribute('aria-expanded', String(isOpen));
+          menuToggle.textContent = isOpen ? 'Close' : 'Menu';
+        });
+
+        // Close mobile menu when an anchor link is clicked
+        var navLinks = siteNav.querySelectorAll('a');
+        navLinks.forEach(function (link) {
+          link.addEventListener('click', function () {
+            siteNav.classList.remove('is-open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.textContent = 'Menu';
+          });
+        });
+      }
+
+      // Pre-select Service Category when clicking a card CTA link
+      var serviceLinks = document.querySelectorAll('[data-service-select]');
+      var serviceSelect = document.getElementById('serviceType');
+      serviceLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+          var targetService = link.getAttribute('data-service-select');
+          if (serviceSelect && targetService) {
+            serviceSelect.value = targetService;
+          }
+        });
+      });
+
+      // Contact Form Client-Side Validation & Confirmation State
+      var form = document.getElementById('service-form');
+      var formWrapper = document.getElementById('form-wrapper');
+      var confirmationBox = document.getElementById('form-confirmation');
+      var resetBtn = document.getElementById('reset-form-btn');
+
+      function setGroupError(groupId, hasError) {
+        var group = document.getElementById(groupId);
+        if (!group) return;
+        if (hasError) {
+          group.classList.add('has-error');
+        } else {
+          group.classList.remove('has-error');
+        }
+      }
+
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          var fullName = document.getElementById('fullName').value.trim();
+          var phone = document.getElementById('phone').value.trim();
+          var email = document.getElementById('email').value.trim();
+          var city = document.getElementById('city').value;
+          var serviceType = document.getElementById('serviceType').value;
+          var preferredTime = document.getElementById('preferredTime').value.trim();
+          var message = document.getElementById('message').value.trim();
+
+          var isValid = true;
+
+          // Validate Name
+          if (fullName.length < 2) {
+            setGroupError('group-name', true);
+            isValid = false;
+          } else {
+            setGroupError('group-name', false);
+          }
+
+          // Validate Phone (at least 10 digits)
+          var digitsOnly = phone.replace(/\D/g, '');
+          if (digitsOnly.length < 10) {
+            setGroupError('group-phone', true);
+            isValid = false;
+          } else {
+            setGroupError('group-phone', false);
+          }
+
+          // Validate Email
+          var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailPattern.test(email)) {
+            setGroupError('group-email', true);
+            isValid = false;
+          } else {
+            setGroupError('group-email', false);
+          }
+
+          // Validate City
+          if (!city) {
+            setGroupError('group-city', true);
+            isValid = false;
+          } else {
+            setGroupError('group-city', false);
+          }
+
+          // Validate Service Type
+          if (!serviceType) {
+            setGroupError('group-service', true);
+            isValid = false;
+          } else {
+            setGroupError('group-service', false);
+          }
+
+          // Validate Message
+          if (message.length < 4) {
+            setGroupError('group-message', true);
+            isValid = false;
+          } else {
+            setGroupError('group-message', false);
+          }
+
+          if (!isValid) {
+            return;
+          }
+
+          // Populate confirmation summary
+          document.getElementById('confirm-name').textContent = fullName;
+          document.getElementById('confirm-phone').textContent = phone;
+          document.getElementById('confirm-service').textContent = serviceType;
+          document.getElementById('confirm-city').textContent = city + ', UT';
+          document.getElementById('confirm-time').textContent = preferredTime || 'First Available';
+
+          formWrapper.style.display = 'none';
+          confirmationBox.classList.add('is-visible');
+        });
+      }
+
+      if (resetBtn) {
+        resetBtn.addEventListener('click', function () {
+          form.reset();
+          confirmationBox.classList.remove('is-visible');
+          formWrapper.style.display = 'block';
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
