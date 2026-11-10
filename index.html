@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quality Heating &amp; Air | Heating, Cooling &amp; Indoor Air Quality in Utah</title>
   <meta name="description" content="Quality Heating & Air provides dependable residential and light commercial heating, air conditioning, and indoor air quality services across the Wasatch Front. Call (801) 474-1089." />
+  <link rel="icon" type="image/svg+xml" href="logo.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -172,6 +173,12 @@
 
     .btn:active {
       transform: translateY(1px);
+    }
+
+    .btn:disabled {
+      opacity: 0.68;
+      cursor: not-allowed;
+      transform: none;
     }
 
     .btn--primary {
@@ -731,7 +738,7 @@
     }
 
     /* ==========================================================================
-       About / Sister Company Heritage Section (#about)
+       About / Local Craftsmanship Section (#about)
        ========================================================================== */
     .about-section {
       background-color: var(--color-deep-blue);
@@ -765,7 +772,7 @@
       margin-bottom: 1.25rem;
     }
 
-    .about-sister-box {
+    .about-promise-box {
       background-color: var(--color-white);
       color: var(--color-charcoal);
       border-radius: var(--radius-md);
@@ -774,7 +781,7 @@
       border-top: 6px solid var(--color-ice-blue);
     }
 
-    .about-sister-box__badge {
+    .about-promise-box__badge {
       display: inline-block;
       font-size: 0.74rem;
       font-weight: 800;
@@ -787,7 +794,7 @@
       margin-bottom: 0.85rem;
     }
 
-    .about-sister-box h3 {
+    .about-promise-box h3 {
       font-size: 1.45rem;
       font-weight: 800;
       color: var(--color-deep-blue);
@@ -795,7 +802,7 @@
       line-height: 1.25;
     }
 
-    .about-sister-box p {
+    .about-promise-box p {
       font-size: 0.95rem;
       color: var(--color-charcoal);
       margin-bottom: 1.25rem;
@@ -818,7 +825,7 @@
       color: var(--color-deep-blue);
     }
 
-    .sister-link {
+    .about-cta-link {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
@@ -829,7 +836,7 @@
       padding-bottom: 0.15rem;
     }
 
-    .sister-link:hover {
+    .about-cta-link:hover {
       color: var(--color-deep-blue);
       border-bottom-color: var(--color-deep-blue);
     }
@@ -1089,6 +1096,41 @@
 
     .form-group.has-error .form-error {
       display: block;
+    }
+
+    /* Visually-hidden honeypot container (positioned off-screen rather than display:none so bots still target it) */
+    .hp-field {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .form-submit-alert {
+      display: none;
+      margin-top: 1rem;
+      padding: 0.85rem 1rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--color-heating-red);
+      background-color: #fff8f8;
+      color: var(--color-charcoal);
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    .form-submit-alert.is-visible {
+      display: block;
+    }
+
+    .form-submit-alert a {
+      color: var(--color-heating-red);
+      font-weight: 700;
+      text-decoration: underline;
     }
 
     .form-submit-row {
@@ -1354,11 +1396,11 @@
   <div class="utility-bar">
     <div class="container utility-bar__inner">
       <div class="utility-bar__info">
-        <span><span class="utility-bar__tag">Utah HVAC</span> 2970 S West Temple Unit A, South Salt Lake, UT 84115</span>
+        <span><span class="utility-bar__tag">Utah HVAC</span></span>
         <span>Mon–Fri: 9:00AM – 6:00PM | Sat–Sun: Scheduling Only</span>
       </div>
       <div>
-        Sister Company to <a href="https://qualitypoolandspa.com/about.html" target="_blank" rel="noopener">Quality Pool &amp; Spa</a>
+        South Salt Lake Dispatch | <a href="#contact">Request Service Online</a>
       </div>
     </div>
   </div>
@@ -1367,7 +1409,7 @@
   <header class="site-header">
     <div class="container site-header__inner">
       <a href="#top" class="brand-logo" aria-label="Quality Heating & Air Home">
-        <img src="logo-temp.png" alt="Quality Heating & Air Logo" />
+        <img src="logo.svg" width="1185" height="544" alt="Quality Heating &amp; Air Logo" />
       </a>
 
       <nav class="site-nav" id="site-nav" aria-label="Primary Navigation">
@@ -1422,7 +1464,7 @@
             </div>
             <div class="highlight-item">
               <span class="highlight-marker"></span>
-              <span>Sister Company to Quality Pool &amp; Spa</span>
+              <span>All Major HVAC Makes &amp; Models</span>
             </div>
           </div>
         </div>
@@ -1585,25 +1627,25 @@
       </div>
     </section>
 
-    <!-- About / Sister Company Heritage Section -->
+    <!-- About / Local Craftsmanship Section -->
     <section class="section about-section" id="about">
       <div class="container about-grid">
         <div class="about-copy">
-          <span class="eyebrow">Our Utah Heritage</span>
+          <span class="eyebrow">Locally Owned &amp; Operated</span>
           <h2 class="section-title">Built on Proven Craftsmanship &amp; Local Accountability</h2>
           <p>
             <strong>Quality Heating &amp; Air</strong> was founded with a clear mission: to bring straightforward, master-level mechanical workmanship and honest customer care to homeowners and businesses throughout the Wasatch Front and Wasatch Back.
           </p>
           <p>
-            As the proud new sister company to <strong>Quality Pool &amp; Spa</strong>, our roots in Utah home comfort run deep. For years, Utah families have trusted the Quality name for technical precision, reliable scheduling, and standing behind every system we touch. Now, we bring that exact same dedication inside your home—ensuring your furnace, air conditioner, and indoor air quality perform flawlessly in every season.
+            Utah's high-desert climate demands more from mechanical equipment than almost anywhere else—from sub-zero winter nights and valley inversions to dry, triple-digit summer heat. We size, service, and install every system for our local elevation and seasonal extremes, standing behind every furnace, air conditioner, and ductwork solution we touch.
           </p>
         </div>
 
-        <div class="about-sister-box">
-          <span class="about-sister-box__badge">Sister Company Tradition</span>
-          <h3>From Backyard Relaxation to Year-Round Indoor Climate Control</h3>
+        <div class="about-promise-box">
+          <span class="about-promise-box__badge">The Quality Standard</span>
+          <h3>Engineered for Year-Round Indoor Comfort &amp; Efficiency</h3>
           <p>
-            Whether maintaining complex mechanical equipment or engineering whole-home heating and cooling systems, our philosophy never changes: do the job right the first time, respect the customer's property, and communicate clearly.
+            Whether troubleshooting an urgent no-heat call or engineering a complete high-efficiency system replacement, our philosophy never changes: diagnose accurately, do the job right the first time, respect your property, and communicate clearly.
           </p>
           <div class="values-pillars">
             <div class="value-pillar">No High-Pressure Sales</div>
@@ -1611,8 +1653,8 @@
             <div class="value-pillar">Respectful Clean Workspaces</div>
             <div class="value-pillar">Long-Term System Care</div>
           </div>
-          <a href="https://qualitypoolandspa.com/about.html" target="_blank" rel="noopener" class="sister-link">
-            Learn About Our Sister Company, Quality Pool &amp; Spa &rarr;
+          <a href="#contact" class="about-cta-link">
+            Schedule Service or Request an Estimate &rarr;
           </a>
         </div>
       </div>
@@ -1630,26 +1672,26 @@
         </div>
 
         <ul class="cities-grid" aria-label="20 Utah Service Area Cities">
-          <li class="city-pill"><span>Salt Lake City</span><span class="city-pill__state">UT</span></li>
-          <li class="city-pill"><span>Sandy</span><span class="city-pill__state">UT</span></li>
-          <li class="city-pill"><span>Park City</span><span class="city-pill__state">UT</span></li>
-          <li class="city-pill"><span>Draper</span><span class="city-pill__state">UT</span></li>
-          <li class="city-pill"><span>Provo</span><span class="city-pill__state">UT</span></li>
-          <li class="city-pill"><span>South Jordan</span><span class="city-pill__state">UT</span></li>
-          <li class="city-pill"><span>Ogden</span><span class="city-pill__state">UT</span></li>
-          <li class="city-pill"><span>Heber City</span><span class="city-pill__state">UT</span></li>
-          <li class="city-pill"><span>West Jordan</span><span class="city-pill__state">UT</span></li>
-          <li class="city-pill"><span>Orem</span><span class="city-pill__state">UT</span></li>
-          <li class="city-pill"><span>Lehi</span><span class="city-pill__state">UT</span></li>
-          <li class="city-pill"><span>Bountiful</span><span class="city-pill__state">UT</span></li>
-          <li class="city-pill"><span>Layton</span><span class="city-pill__state">UT</span></li>
-          <li class="city-pill"><span>West Valley City</span><span class="city-pill__state">UT</span></li>
-          <li class="city-pill"><span>Alpine</span><span class="city-pill__state">UT</span></li>
-          <li class="city-pill"><span>Cottonwood Heights</span><span class="city-pill__state">UT</span></li>
-          <li class="city-pill"><span>Murray</span><span class="city-pill__state">UT</span></li>
-          <li class="city-pill"><span>Herriman</span><span class="city-pill__state">UT</span></li>
-          <li class="city-pill"><span>Clearfield</span><span class="city-pill__state">UT</span></li>
-          <li class="city-pill"><span>Riverton</span><span class="city-pill__state">UT</span></li>
+          <li class="city-pill"><span>Salt Lake City</span></li>
+          <li class="city-pill"><span>Sandy</span></li>
+          <li class="city-pill"><span>Park City</span></li>
+          <li class="city-pill"><span>Draper</span></li>
+          <li class="city-pill"><span>Provo</span></li>
+          <li class="city-pill"><span>South Jordan</span></li>
+          <li class="city-pill"><span>Ogden</span></li>
+          <li class="city-pill"><span>Heber City</span></li>
+          <li class="city-pill"><span>West Jordan</span></li>
+          <li class="city-pill"><span>Orem</span></li>
+          <li class="city-pill"><span>Lehi</span></li>
+          <li class="city-pill"><span>Bountiful</span></li>
+          <li class="city-pill"><span>Layton</span></li>
+          <li class="city-pill"><span>West Valley City</span></li>
+          <li class="city-pill"><span>Alpine</span></li>
+          <li class="city-pill"><span>Cottonwood Heights</span></li>
+          <li class="city-pill"><span>Murray</span></li>
+          <li class="city-pill"><span>Herriman</span></li>
+          <li class="city-pill"><span>Clearfield</span></li>
+          <li class="city-pill"><span>Riverton</span></li>
         </ul>
 
         <p class="area-note">
@@ -1676,13 +1718,7 @@
             <p class="contact-info-card__subtitle">Residential &amp; Commercial HVAC Service &amp; Installation</p>
 
             <div class="info-blocks">
-              <div class="info-block">
-                <div class="info-block__label">Shop &amp; Office Address</div>
-                <div class="info-block__value">
-                  2970 S West Temple Unit A<br />
-                  South Salt Lake, UT 84115
-                </div>
-              </div>
+
 
               <div class="info-block">
                 <div class="info-block__label">Operating Hours</div>
@@ -1722,26 +1758,37 @@
                 Complete the form below and our dispatch coordinator will contact you promptly to confirm your appointment window.
               </p>
 
-              <form id="service-form" novalidate>
+              <form
+                id="service-form"
+                name="service-request"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                novalidate
+              >
+                <!-- Netlify Form Identification & Notification Subject -->
+                <input type="hidden" name="form-name" value="service-request" />
+                <input type="hidden" name="subject" id="form-subject" value="New HVAC Service Request — Quality Heating &amp; Air (%{submissionId})" data-remove-prefix />
+
                 <div class="form-grid">
                   <!-- Full Name -->
                   <div class="form-group" id="group-name">
                     <label for="fullName" class="form-label">Full Name <span class="req">*</span></label>
-                    <input type="text" id="fullName" name="fullName" class="form-control" placeholder="Jane Doe" required />
+                    <input type="text" id="fullName" name="fullName" class="form-control" placeholder="Jane Doe" autocomplete="name" maxlength="120" required />
                     <span class="form-error">Please enter your full name.</span>
                   </div>
 
                   <!-- Phone Number -->
                   <div class="form-group" id="group-phone">
                     <label for="phone" class="form-label">Phone Number <span class="req">*</span></label>
-                    <input type="tel" id="phone" name="phone" class="form-control" placeholder="(801) 555-0199" required />
-                    <span class="form-error">Please enter a valid 10-digit phone number.</span>
+                    <input type="tel" id="phone" name="phone" class="form-control" placeholder="(801) 555-0199" autocomplete="tel" maxlength="25" required />
+                    <span class="form-error">Please enter a valid 10-digit US phone number.</span>
                   </div>
 
                   <!-- Email Address -->
                   <div class="form-group" id="group-email">
                     <label for="email" class="form-label">Email Address <span class="req">*</span></label>
-                    <input type="email" id="email" name="email" class="form-control" placeholder="you@example.com" required />
+                    <input type="email" id="email" name="email" class="form-control" placeholder="you@example.com" autocomplete="email" maxlength="160" required />
                     <span class="form-error">Please enter a valid email address.</span>
                   </div>
 
@@ -1794,20 +1841,31 @@
                   <!-- Preferred Date/Time -->
                   <div class="form-group" id="group-time">
                     <label for="preferredTime" class="form-label">Preferred Date / Window</label>
-                    <input type="text" id="preferredTime" name="preferredTime" class="form-control" placeholder="e.g., Tomorrow Morning / Next Tuesday" />
+                    <input type="text" id="preferredTime" name="preferredTime" class="form-control" placeholder="e.g., Tomorrow Morning / Next Tuesday" maxlength="120" />
+                    <span class="form-error">Please remove website links from this field.</span>
                   </div>
 
                   <!-- Message / System Details -->
                   <div class="form-group form-group--full" id="group-message">
                     <label for="message" class="form-label">System Details or How We Can Help <span class="req">*</span></label>
-                    <textarea id="message" name="message" class="form-control" placeholder="Tell us about your furnace, A/C, or comfort issue (e.g., noises, error codes, age of unit)..." required></textarea>
+                    <textarea id="message" name="message" class="form-control" placeholder="Tell us about your furnace, A/C, or comfort issue (e.g., noises, error codes, age of unit)..." maxlength="2000" required></textarea>
                     <span class="form-error">Please briefly describe how we can help you.</span>
                   </div>
                 </div>
 
+                <!-- Anti-Spam Honeypot Trap (Placed after visible inputs so fullName leads Netlify UI summaries) -->
+                <div class="hp-field" aria-hidden="true">
+                  <label for="bot-field">Do not fill out this field if you are human</label>
+                  <input type="text" id="bot-field" name="bot-field" tabindex="-1" autocomplete="off" />
+                  <label for="company-website">Company Website</label>
+                  <input type="url" id="company-website" tabindex="-1" autocomplete="off" placeholder="https://yourwebsite.com" />
+                </div>
+
+                <div class="form-submit-alert" id="form-submit-alert" role="alert" aria-live="assertive"></div>
+
                 <div class="form-submit-row">
                   <p class="form-privacy-note">Your information goes directly to our South Salt Lake dispatch team.</p>
-                  <button type="submit" class="btn btn--primary">Submit Service Request</button>
+                  <button type="submit" class="btn btn--primary" id="submit-btn">Submit Service Request</button>
                 </div>
               </form>
             </div>
@@ -1856,10 +1914,10 @@
       <div class="footer-grid">
         <div class="footer-about">
           <div class="footer-logo-box">
-            <img src="logo-temp.png" alt="Quality Heating & Air Logo" />
+            <img src="logo.svg" width="1185" height="544" loading="lazy" alt="Quality Heating &amp; Air Logo" />
           </div>
           <p>
-            Dependable residential and light commercial heating, cooling, and indoor air quality across the Wasatch Front. Proud sister company to <a href="https://qualitypoolandspa.com/about.html" target="_blank" rel="noopener" style="color: var(--color-ice-blue); text-decoration: underline;">Quality Pool &amp; Spa</a>.
+            Dependable residential and light commercial heating, cooling, and indoor air quality across the Wasatch Front and Mountain Communities—dispatched locally from South Salt Lake.
           </p>
         </div>
 
@@ -1868,10 +1926,10 @@
           <ul class="footer-links">
             <li><a href="#top">Back to Top</a></li>
             <li><a href="#services">HVAC Services</a></li>
-            <li><a href="#about">About &amp; Heritage</a></li>
+            <li><a href="#about">About Us</a></li>
             <li><a href="#service-area">Utah Service Area</a></li>
             <li><a href="#contact">Schedule Service</a></li>
-            <li><a href="https://qualitypoolandspa.com/about.html" target="_blank" rel="noopener">Quality Pool &amp; Spa</a></li>
+            <li><a href="#contact" data-service-select="New System Estimate / Second Opinion">Request an Estimate</a></li>
           </ul>
         </div>
 
@@ -1890,7 +1948,7 @@
 
       <div class="footer-bottom">
         <p>&copy; <span id="current-year">2026</span> Quality Heating &amp; Air. All Rights Reserved.</p>
-        <p>Sister Company to <a href="https://qualitypoolandspa.com/about.html" target="_blank" rel="noopener">Quality Pool &amp; Spa</a></p>
+        <p>Residential &amp; Light Commercial HVAC &bull; <a href="tel:8014741089">(801) 474-1089</a></p>
       </div>
     </div>
   </footer>
@@ -1938,15 +1996,55 @@
         });
       });
 
-      // Contact Form Client-Side Validation & Confirmation State
+      // Contact Form Netlify Submission, Anti-Spam Protection & Validation
       var form = document.getElementById('service-form');
       var formWrapper = document.getElementById('form-wrapper');
       var confirmationBox = document.getElementById('form-confirmation');
       var resetBtn = document.getElementById('reset-form-btn');
+      var submitBtn = document.getElementById('submit-btn');
+      var submitAlert = document.getElementById('form-submit-alert');
+      var subjectInput = document.getElementById('form-subject');
 
-      function setGroupError(groupId, hasError) {
+      var formLoadedAt = Date.now();
+      var hasHumanInteraction = false;
+      var MIN_FILL_MS = 2500;
+      var RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
+      var RATE_LIMIT_COOLDOWN_MS = 30 * 1000;
+      var RATE_LIMIT_MAX = 3;
+      var STORAGE_KEY = 'qha_form_submissions';
+
+      var linkPattern = /(https?:\/\/|www\.[a-z0-9-]+|<a\s|\[url=)/i;
+      var spamPhrasePattern = /\b(seo services|search engine optimization|backlinks|domain authority|guest post|crypto|bitcoin|casino|telegram|whatsapp marketing|lead generation|offshore developers|virtual assistant services)\b/i;
+      var blockedEmailDomains = {
+        'example.com': true,
+        'example.org': true,
+        'example.net': true,
+        'test.com': true,
+        'mailinator.com': true,
+        'guerrillamail.com': true,
+        '10minutemail.com': true,
+        'tempmail.com': true,
+        'yopmail.com': true,
+        'sharklasers.com': true
+      };
+
+      function markInteraction() {
+        hasHumanInteraction = true;
+      }
+
+      if (form) {
+        ['focusin', 'keydown', 'pointerdown', 'change'].forEach(function (evt) {
+          form.addEventListener(evt, markInteraction, { passive: true });
+        });
+      }
+
+      function setGroupError(groupId, hasError, customMessage) {
         var group = document.getElementById(groupId);
         if (!group) return;
+        var errorSpan = group.querySelector('.form-error');
+        if (errorSpan && customMessage) {
+          errorSpan.textContent = customMessage;
+        }
         if (hasError) {
           group.classList.add('has-error');
         } else {
@@ -1954,48 +2052,142 @@
         }
       }
 
+      function showSubmitAlert(htmlMessage) {
+        if (!submitAlert) return;
+        if (htmlMessage) {
+          submitAlert.innerHTML = htmlMessage;
+          submitAlert.classList.add('is-visible');
+        } else {
+          submitAlert.innerHTML = '';
+          submitAlert.classList.remove('is-visible');
+        }
+      }
+
+      function getRecentSubmissions() {
+        try {
+          var raw = sessionStorage.getItem(STORAGE_KEY);
+          var list = raw ? JSON.parse(raw) : [];
+          var cutoff = Date.now() - RATE_LIMIT_WINDOW_MS;
+          return Array.isArray(list) ? list.filter(function (ts) { return ts > cutoff; }) : [];
+        } catch (err) {
+          return [];
+        }
+      }
+
+      function recordSubmission() {
+        try {
+          var list = getRecentSubmissions();
+          list.push(Date.now());
+          sessionStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+        } catch (err) {
+          // Ignore storage errors in private browsing modes
+        }
+      }
+
+      function hasValidSelectOption(selectEl, val) {
+        if (!selectEl || !val) return false;
+        for (var i = 0; i < selectEl.options.length; i++) {
+          if (selectEl.options[i].value === val) return true;
+        }
+        return false;
+      }
+
+      function isValidUsPhone(rawPhone) {
+        var digits = rawPhone.replace(/\D/g, '');
+        if (digits.length === 11 && digits.charAt(0) === '1') {
+          digits = digits.slice(1);
+        }
+        if (digits.length !== 10) return false;
+        // NANP: area code and central office code cannot begin with 0 or 1
+        if (!/^[2-9]\d{2}[2-9]\d{6}$/.test(digits)) return false;
+        // Reject repeated digits, sequential test strings, and fictional 555-01XX numbers
+        if (/^(\d)\1{9}$/.test(digits)) return false;
+        if (digits === '2345678901' || digits === '9876543210') return false;
+        if (/^\d{3}55501\d{2}$/.test(digits)) return false;
+        return true;
+      }
+
+      function showConfirmationSummary(fullName, phone, serviceType, city, preferredTime) {
+        document.getElementById('confirm-name').textContent = fullName || 'Valued Customer';
+        document.getElementById('confirm-phone').textContent = phone || '(801) 474-1089';
+        document.getElementById('confirm-service').textContent = serviceType || 'HVAC Service';
+        document.getElementById('confirm-city').textContent = (city || 'Salt Lake Area') + ', UT';
+        document.getElementById('confirm-time').textContent = preferredTime || 'First Available';
+
+        formWrapper.style.display = 'none';
+        confirmationBox.classList.add('is-visible');
+      }
+
       if (form) {
         form.addEventListener('submit', function (e) {
           e.preventDefault();
+          showSubmitAlert('');
 
+          var botField = document.getElementById('bot-field');
+          var websiteTrap = document.getElementById('company-website');
           var fullName = document.getElementById('fullName').value.trim();
           var phone = document.getElementById('phone').value.trim();
           var email = document.getElementById('email').value.trim();
-          var city = document.getElementById('city').value;
-          var serviceType = document.getElementById('serviceType').value;
+          var citySelect = document.getElementById('city');
+          var serviceSelectEl = document.getElementById('serviceType');
+          var city = citySelect.value;
+          var serviceType = serviceSelectEl.value;
           var preferredTime = document.getElementById('preferredTime').value.trim();
           var message = document.getElementById('message').value.trim();
 
+          // 1. Silent bot traps: honeypots, sub-2.5s fill speed, or zero human DOM interaction
+          var honeypotTripped = (botField && botField.value.trim() !== '') || (websiteTrap && websiteTrap.value.trim() !== '');
+          var tooFast = (Date.now() - formLoadedAt) < MIN_FILL_MS;
+          if (honeypotTripped || tooFast || !hasHumanInteraction) {
+            // Silently mimic success so automated bots do not retry or adapt
+            showConfirmationSummary(fullName, phone, serviceType, city, preferredTime);
+            return;
+          }
+
+          // 2. Session rate-limiting against rapid flood submissions
+          var recentSubs = getRecentSubmissions();
+          var now = Date.now();
+          if (
+            recentSubs.length >= RATE_LIMIT_MAX ||
+            (recentSubs.length > 0 && (now - recentSubs[recentSubs.length - 1]) < RATE_LIMIT_COOLDOWN_MS)
+          ) {
+            showSubmitAlert(
+              'We recently received a service request from your browser. Please wait a moment before submitting again, or call dispatch directly at <a href="tel:8014741089">(801) 474-1089</a>.'
+            );
+            return;
+          }
+
           var isValid = true;
 
-          // Validate Name
-          if (fullName.length < 2) {
-            setGroupError('group-name', true);
+          // Validate Name (must contain letters, no links or HTML tags)
+          if (fullName.length < 2 || !/[a-zA-Z]/.test(fullName) || linkPattern.test(fullName) || /[<>]/.test(fullName)) {
+            setGroupError('group-name', true, 'Please enter your full name (no links or special markup).');
             isValid = false;
           } else {
             setGroupError('group-name', false);
           }
 
-          // Validate Phone (at least 10 digits)
-          var digitsOnly = phone.replace(/\D/g, '');
-          if (digitsOnly.length < 10) {
-            setGroupError('group-phone', true);
+          // Validate US Phone Number
+          if (!isValidUsPhone(phone)) {
+            setGroupError('group-phone', true, 'Please enter a valid 10-digit US phone number.');
             isValid = false;
           } else {
             setGroupError('group-phone', false);
           }
 
-          // Validate Email
-          var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          if (!emailPattern.test(email)) {
-            setGroupError('group-email', true);
+          // Validate Email & Block Placeholder / Disposable Domains
+          var emailPattern = /^[^\s@]+@([^\s@]+\.[a-zA-Z]{2,})$/;
+          var emailMatch = email.match(emailPattern);
+          var emailDomain = emailMatch ? emailMatch[1].toLowerCase() : '';
+          if (!emailMatch || blockedEmailDomains[emailDomain]) {
+            setGroupError('group-email', true, 'Please enter a valid personal or work email address.');
             isValid = false;
           } else {
             setGroupError('group-email', false);
           }
 
           // Validate City
-          if (!city) {
+          if (!hasValidSelectOption(citySelect, city)) {
             setGroupError('group-city', true);
             isValid = false;
           } else {
@@ -2003,16 +2195,30 @@
           }
 
           // Validate Service Type
-          if (!serviceType) {
+          if (!hasValidSelectOption(serviceSelectEl, serviceType)) {
             setGroupError('group-service', true);
             isValid = false;
           } else {
             setGroupError('group-service', false);
           }
 
-          // Validate Message
+          // Validate Preferred Time (no embedded URLs)
+          if (preferredTime && linkPattern.test(preferredTime)) {
+            setGroupError('group-time', true, 'Please remove website links from this field.');
+            isValid = false;
+          } else {
+            setGroupError('group-time', false);
+          }
+
+          // Validate Message & Content Anti-Spam Heuristics
           if (message.length < 4) {
-            setGroupError('group-message', true);
+            setGroupError('group-message', true, 'Please briefly describe how we can help you.');
+            isValid = false;
+          } else if (linkPattern.test(message)) {
+            setGroupError('group-message', true, 'For security, please remove website links from your message.');
+            isValid = false;
+          } else if (spamPhrasePattern.test(message)) {
+            setGroupError('group-message', true, 'Your message was flagged by our spam filter. Please describe your HVAC system issue or call (801) 474-1089.');
             isValid = false;
           } else {
             setGroupError('group-message', false);
@@ -2022,21 +2228,51 @@
             return;
           }
 
-          // Populate confirmation summary
-          document.getElementById('confirm-name').textContent = fullName;
-          document.getElementById('confirm-phone').textContent = phone;
-          document.getElementById('confirm-service').textContent = serviceType;
-          document.getElementById('confirm-city').textContent = city + ', UT';
-          document.getElementById('confirm-time').textContent = preferredTime || 'First Available';
+          // Set descriptive subject line for Netlify email notifications
+          if (subjectInput) {
+            subjectInput.value = 'Service Request: ' + serviceType + ' — ' + fullName + ' (' + city + ') [%{submissionId}]';
+          }
 
-          formWrapper.style.display = 'none';
-          confirmationBox.classList.add('is-visible');
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending Request...';
+          }
+
+          var formData = new FormData(form);
+          var encodedBody = new URLSearchParams(formData).toString();
+
+          fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: encodedBody
+          })
+            .then(function (response) {
+              if (!response.ok) {
+                throw new Error('Netlify submission returned status ' + response.status);
+              }
+              recordSubmission();
+              showConfirmationSummary(fullName, phone, serviceType, city, preferredTime);
+            })
+            .catch(function () {
+              showSubmitAlert(
+                'We could not transmit your request online right now. Please call dispatch directly at <a href="tel:8014741089">(801) 474-1089</a> or email <a href="mailto:office@qheatingandair.com">office@qheatingandair.com</a>.'
+              );
+            })
+            .finally(function () {
+              if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Service Request';
+              }
+            });
         });
       }
 
       if (resetBtn) {
         resetBtn.addEventListener('click', function () {
           form.reset();
+          formLoadedAt = Date.now();
+          hasHumanInteraction = false;
+          showSubmitAlert('');
           confirmationBox.classList.remove('is-visible');
           formWrapper.style.display = 'block';
         });
