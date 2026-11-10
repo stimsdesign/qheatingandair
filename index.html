@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quality Heating &amp; Air | Heating, Cooling &amp; Indoor Air Quality in Utah</title>
-  <meta name="description" content="Quality Heating & Air provides dependable residential and light commercial heating, air conditioning, and indoor air quality services across the Wasatch Front. Call (801) 474-1089." />
+  <title>Quality Heating &amp; Air | HVAC/R, Radiant Heat, Snow Melt &amp; Refrigeration in Utah</title>
+  <meta name="description" content="Quality Heating & Air provides dependable residential and light commercial HVAC/R, radiant heat, hydronic snow melt, and restaurant refrigeration services across the Wasatch Front. Call (801) 474-1089." />
   <link rel="icon" type="image/svg+xml" href="logo.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -496,14 +496,14 @@
     }
 
     .hero-panel__body {
-      padding: 1.75rem;
+      padding: 1.5rem 1.75rem;
       display: flex;
       flex-direction: column;
-      gap: 1.15rem;
+      gap: 0.9rem;
     }
 
     .panel-stat {
-      padding: 1rem 1.15rem;
+      padding: 0.85rem 1.1rem;
       border-radius: var(--radius-md);
       background-color: var(--color-bg-soft);
       border-left: 4px solid var(--color-deep-blue);
@@ -515,6 +515,10 @@
 
     .panel-stat--cool {
       border-left-color: var(--color-ice-blue);
+    }
+
+    .panel-stat--comm {
+      border-left-color: var(--color-charcoal);
     }
 
     .panel-stat__title {
@@ -558,7 +562,7 @@
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1.75rem;
       align-items: stretch;
     }
@@ -592,6 +596,10 @@
       background-color: var(--color-ice-blue);
     }
 
+    .service-card--commercial .service-card__accent {
+      background-color: var(--color-charcoal);
+    }
+
     .service-card--iaq .service-card__accent {
       background-color: var(--color-deep-blue);
     }
@@ -623,6 +631,11 @@
     .service-card--cooling .service-card__tag {
       background-color: rgba(39, 168, 222, 0.12);
       color: var(--color-deep-blue);
+    }
+
+    .service-card--commercial .service-card__tag {
+      background-color: rgba(67, 66, 68, 0.1);
+      color: var(--color-charcoal);
     }
 
     .service-card--iaq .service-card__tag {
@@ -690,6 +703,10 @@
 
     .service-card--cooling .service-list__item::before {
       background-color: var(--color-ice-blue);
+    }
+
+    .service-card--commercial .service-list__item::before {
+      background-color: var(--color-charcoal);
     }
 
     .service-card--iaq .service-list__item::before {
@@ -1396,7 +1413,7 @@
   <div class="utility-bar">
     <div class="container utility-bar__inner">
       <div class="utility-bar__info">
-        <span><span class="utility-bar__tag">Utah HVAC</span></span>
+        <span><span class="utility-bar__tag">Utah HVAC/R</span></span>
         <span>Mon–Fri: 9:00AM – 6:00PM | Sat–Sun: Scheduling Only</span>
       </div>
       <div>
@@ -1436,12 +1453,12 @@
     <section class="hero">
       <div class="container hero__grid">
         <div class="hero__content">
-          <span class="eyebrow">Residential &amp; Light Commercial HVAC</span>
+          <span class="eyebrow">Residential &amp; Light Commercial HVAC/R</span>
           <h1 class="hero__title">
             Dependable <span class="hero__title-heat">Heating</span>, Precision <span class="hero__title-cool">Cooling</span> &amp; Clean Indoor Air Across the Wasatch Front.
           </h1>
           <p class="hero__lead">
-            From freezing Utah winter nights to peak summer heatwaves, <strong>Quality Heating &amp; Air</strong> delivers honest diagnostics, code-compliant installations, and responsive mechanical service built to last.
+            From freezing Utah winter nights to peak summer heatwaves, <strong>Quality Heating &amp; Air</strong> delivers honest diagnostics, code-compliant installations, and responsive mechanical service—covering home furnaces and A/C, <strong>radiant heat &amp; snow melt systems</strong>, and <strong>restaurant &amp; commercial refrigeration</strong>.
           </p>
 
           <div class="hero__actions">
@@ -1452,19 +1469,19 @@
           <div class="hero__highlights">
             <div class="highlight-item">
               <span class="highlight-marker"></span>
-              <span>Experienced HVAC Technicians</span>
+              <span>Residential &amp; Light Commercial HVAC/R</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-marker"></span>
+              <span>Snow Melt &amp; Radiant Heat Systems</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-marker"></span>
+              <span>Restaurant &amp; Commercial Refrigeration</span>
             </div>
             <div class="highlight-item">
               <span class="highlight-marker"></span>
               <span>Transparent, Upfront Pricing</span>
-            </div>
-            <div class="highlight-item">
-              <span class="highlight-marker"></span>
-              <span>Fast Local Wasatch Front Dispatch</span>
-            </div>
-            <div class="highlight-item">
-              <span class="highlight-marker"></span>
-              <span>All Major HVAC Makes &amp; Models</span>
             </div>
           </div>
         </div>
@@ -1473,20 +1490,24 @@
         <aside class="hero-panel" aria-label="Service Overview">
           <div class="hero-panel__top">
             <div class="hero-panel__kicker">South Salt Lake Headquarters</div>
-            <h2 class="hero-panel__heading">Year-Round Climate Control</h2>
+            <h2 class="hero-panel__heading">Year-Round Climate &amp; Mechanical Control</h2>
           </div>
           <div class="hero-panel__body">
             <div class="panel-stat panel-stat--heat">
-              <div class="panel-stat__title">High-Efficiency Heating</div>
-              <div class="panel-stat__desc">Furnace diagnostics, heat exchangers, boilers, heat pumps, and winter safety tune-ups.</div>
+              <div class="panel-stat__title">Heating, Radiant Heat &amp; Snow Melt</div>
+              <div class="panel-stat__desc">Furnaces, boilers, radiant floor heating, hydronic driveway/walkway snow melt, and heat pumps.</div>
             </div>
             <div class="panel-stat panel-stat--cool">
               <div class="panel-stat__title">Precision Air Conditioning</div>
               <div class="panel-stat__desc">Central A/C repair, SEER2 system upgrades, refrigerant recharge, and ductless mini-splits.</div>
             </div>
+            <div class="panel-stat panel-stat--comm">
+              <div class="panel-stat__title">Restaurant Refrigeration &amp; HVAC/R</div>
+              <div class="panel-stat__desc">Walk-in coolers and freezers, reach-in units, prep tables, commercial ice machines, and RTUs.</div>
+            </div>
             <div class="panel-stat">
               <div class="panel-stat__title">Air Quality, Ducts &amp; Controls</div>
-              <div class="panel-stat__desc">Whole-home humidifiers, air scrubbers, HEPA filtration, smart zoning, and commercial RTUs.</div>
+              <div class="panel-stat__desc">Whole-home humidifiers, air scrubbers, HEPA filtration, custom ductwork, and smart zoning.</div>
             </div>
           </div>
           <div class="hero-panel__footer">
@@ -1501,48 +1522,48 @@
     <section class="section services-section" id="services">
       <div class="container">
         <div class="section-header">
-          <span class="eyebrow">Full-Service Mechanical Capabilities</span>
-          <h2 class="section-title">Comprehensive Heating, Cooling &amp; Mechanical Services</h2>
+          <span class="eyebrow">Full-Service HVAC/R &amp; Hydronic Capabilities</span>
+          <h2 class="section-title">Comprehensive Heating, Cooling, Hydronics &amp; Commercial Refrigeration</h2>
           <div class="thermal-bar thermal-bar--short">
             <span class="thermal-bar__heat"></span>
             <span class="thermal-bar__mid"></span>
             <span class="thermal-bar__cool"></span>
           </div>
           <p class="section-subtitle">
-            We service, repair, and install all major residential and light commercial HVAC equipment makes and models—engineered specifically for Utah's high-desert elevation and seasonal extremes.
+            We service, repair, and install residential and light commercial HVAC/R equipment, radiant heat and snow melt systems, and restaurant refrigeration—engineered for Utah's high-desert elevation and seasonal extremes.
           </p>
         </div>
 
         <div class="services-grid">
-          <!-- Heating Services Card -->
+          <!-- Heating, Radiant Heat & Snow Melt Card -->
           <article class="service-card service-card--heating">
             <div class="service-card__accent"></div>
             <div class="service-card__content">
-              <span class="service-card__tag">Winter Comfort</span>
-              <h3 class="service-card__title">Heating Services</h3>
+              <span class="service-card__tag">Winter &amp; Hydronic Comfort</span>
+              <h3 class="service-card__title">Heating, Radiant Heat &amp; Snow Melt</h3>
               <p class="service-card__summary">
-                Reliable furnace and heating solutions to keep your family or business warm, safe, and energy-efficient through freezing Utah winters.
+                Reliable forced-air and hydronic heating solutions to keep your home, business, and property warm, safe, and ice-free through freezing Utah winters.
               </p>
               <ul class="service-list">
                 <li class="service-list__item">
-                  <strong>Furnace Repair &amp; Diagnostics</strong>
-                  <span>Ignitors, blower motors, flame sensors, limit switches, and airflow troubleshooting.</span>
+                  <strong>Furnace Repair, Installation &amp; Replacement</strong>
+                  <span>High-efficiency gas furnaces, Manual J load sizing, ignitors, blowers, and safety inspections.</span>
                 </li>
                 <li class="service-list__item">
-                  <strong>High-Efficiency Furnace Installation &amp; Replacement</strong>
-                  <span>Proper Manual J load sizing and multi-stage / variable-speed gas furnace upgrades.</span>
+                  <strong>Radiant Floor Heating &amp; Hydronic Boilers</strong>
+                  <span>In-floor radiant heat loops, high-efficiency condensing boilers, circulator pumps, and zone manifolds.</span>
                 </li>
                 <li class="service-list__item">
-                  <strong>Heat Pump Systems &amp; Boilers</strong>
-                  <span>Dual-fuel cold-climate heat pumps, hydronic heating, and radiant system service.</span>
+                  <strong>Hydronic Snow Melt Systems</strong>
+                  <span>Heated driveways, walkways, patios, and ramps—boiler tuning, glycol protection, and snow/ice sensors.</span>
                 </li>
                 <li class="service-list__item">
-                  <strong>Seasonal Heating Tune-Ups &amp; Safety Inspections</strong>
-                  <span>Combustion analysis, carbon monoxide testing, and heat exchanger inspections.</span>
+                  <strong>Cold-Climate Heat Pumps &amp; Seasonal Tune-Ups</strong>
+                  <span>Dual-fuel heat pumps, combustion analysis, carbon monoxide testing, and heat exchanger care.</span>
                 </li>
               </ul>
-              <a href="#contact" class="service-card__link" data-service-select="Heating Repair or Installation">
-                Schedule Heating Service &rarr;
+              <a href="#contact" class="service-card__link" data-service-select="Heating, Radiant Heat or Snow Melt">
+                Schedule Heating, Radiant or Snow Melt Service &rarr;
               </a>
             </div>
           </article>
@@ -1580,6 +1601,39 @@
             </div>
           </article>
 
+          <!-- Restaurant Refrigeration & Light Commercial HVAC/R Card -->
+          <article class="service-card service-card--commercial">
+            <div class="service-card__accent"></div>
+            <div class="service-card__content">
+              <span class="service-card__tag">Commercial &amp; Foodservice</span>
+              <h3 class="service-card__title">Restaurant Refrigeration &amp; Commercial HVAC/R</h3>
+              <p class="service-card__summary">
+                Responsive diagnostics, repair, and preventative maintenance for restaurants, kitchens, retail spaces, and light commercial facilities across Utah.
+              </p>
+              <ul class="service-list">
+                <li class="service-list__item">
+                  <strong>Walk-In Coolers &amp; Walk-In Freezers</strong>
+                  <span>Compressors, evaporator/condenser coils, defrost timers, door seals, and temperature stability.</span>
+                </li>
+                <li class="service-list__item">
+                  <strong>Reach-In Coolers, Prep Tables &amp; Bar Equipment</strong>
+                  <span>Commercial kitchen refrigeration diagnostics, refrigerant recovery/recharge, and thermostat controls.</span>
+                </li>
+                <li class="service-list__item">
+                  <strong>Commercial Ice Machines &amp; Specialty Coolers</strong>
+                  <span>Ice maker repair, water/condenser cleaning, harvest cycle troubleshooting, and sanitation care.</span>
+                </li>
+                <li class="service-list__item">
+                  <strong>Light Commercial Rooftop Units (RTUs) &amp; Split Systems</strong>
+                  <span>Package rooftop units, commercial make-up air, economizers, and scheduled belt/filter service.</span>
+                </li>
+              </ul>
+              <a href="#contact" class="service-card__link" data-service-select="Restaurant Refrigeration / Commercial HVAC/R">
+                Schedule Commercial or Refrigeration Service &rarr;
+              </a>
+            </div>
+          </article>
+
           <!-- Indoor Air Quality, Ductwork & Controls Card -->
           <article class="service-card service-card--iaq">
             <div class="service-card__accent"></div>
@@ -1587,7 +1641,7 @@
               <span class="service-card__tag">Airflow &amp; Controls</span>
               <h3 class="service-card__title">Indoor Air Quality, Ductwork &amp; Controls</h3>
               <p class="service-card__summary">
-                Eliminate hot and cold spots, combat Utah's dry air and seasonal inversions, and optimize your building's mechanical performance.
+                Eliminate hot and cold spots, combat Utah's dry air and seasonal inversions, and optimize your building's airflow and filtration.
               </p>
               <ul class="service-list">
                 <li class="service-list__item">
@@ -1603,12 +1657,12 @@
                   <span>Custom sheet metal transitions, return air additions, and static pressure optimization.</span>
                 </li>
                 <li class="service-list__item">
-                  <strong>Light Commercial HVAC Service &amp; Maintenance</strong>
-                  <span>Rooftop package units (RTUs), commercial split systems, and scheduled filter/belt care.</span>
+                  <strong>Ventilation &amp; Make-Up Air Solutions</strong>
+                  <span>Fresh-air intakes, energy recovery ventilation, and indoor pollutant reduction during winter inversions.</span>
                 </li>
               </ul>
-              <a href="#contact" class="service-card__link" data-service-select="Indoor Air Quality / Ductwork / Commercial">
-                Schedule Air Quality or Commercial Service &rarr;
+              <a href="#contact" class="service-card__link" data-service-select="Indoor Air Quality / Ductwork / Controls">
+                Schedule Air Quality or Ductwork Service &rarr;
               </a>
             </div>
           </article>
@@ -1617,7 +1671,7 @@
         <!-- Mechanical Standards Strip -->
         <div class="standards-strip">
           <div class="standards-strip__text">
-            <h3>Not Sure What Your System Needs?</h3>
+            <h3>Need Residential HVAC, Hydronic Snow Melt, or Commercial Refrigeration Service?</h3>
             <p>Speak directly with our South Salt Lake team for straightforward answers and convenient scheduling.</p>
           </div>
           <div>
@@ -1634,18 +1688,18 @@
           <span class="eyebrow">Locally Owned &amp; Operated</span>
           <h2 class="section-title">Built on Proven Craftsmanship &amp; Local Accountability</h2>
           <p>
-            <strong>Quality Heating &amp; Air</strong> was founded with a clear mission: to bring straightforward, master-level mechanical workmanship and honest customer care to homeowners and businesses throughout the Wasatch Front and Wasatch Back.
+            <strong>Quality Heating &amp; Air</strong> was founded with a clear mission: to bring straightforward, master-level HVAC/R and hydronic workmanship to homeowners, restaurants, and businesses throughout the Wasatch Front and Wasatch Back.
           </p>
           <p>
-            Utah's high-desert climate demands more from mechanical equipment than almost anywhere else—from sub-zero winter nights and valley inversions to dry, triple-digit summer heat. We size, service, and install every system for our local elevation and seasonal extremes, standing behind every furnace, air conditioner, and ductwork solution we touch.
+            Utah's high-desert and mountain climate demands more from mechanical equipment than almost anywhere else—from sub-zero winter nights and heavy canyon snowfalls to dry, triple-digit summer heat. We size, service, and install every system for our local elevation and seasonal extremes, standing behind every furnace, air conditioner, radiant heat and snow melt system, and commercial refrigeration unit we touch.
           </p>
         </div>
 
         <div class="about-promise-box">
           <span class="about-promise-box__badge">The Quality Standard</span>
-          <h3>Engineered for Year-Round Indoor Comfort &amp; Efficiency</h3>
+          <h3>From Home Comfort &amp; Snow Melt to Commercial Refrigeration</h3>
           <p>
-            Whether troubleshooting an urgent no-heat call or engineering a complete high-efficiency system replacement, our philosophy never changes: diagnose accurately, do the job right the first time, respect your property, and communicate clearly.
+            Whether troubleshooting an urgent winter no-heat call, maintaining a hydronic driveway snow melt system, or repairing a restaurant walk-in cooler, our philosophy never changes: diagnose accurately, do the job right the first time, respect your property, and communicate clearly.
           </p>
           <div class="values-pillars">
             <div class="value-pillar">No High-Pressure Sales</div>
@@ -1715,7 +1769,7 @@
           <!-- Left Column: Company Information -->
           <div class="contact-info-card">
             <h3 class="contact-info-card__title">Quality Heating &amp; Air</h3>
-            <p class="contact-info-card__subtitle">Residential &amp; Commercial HVAC Service &amp; Installation</p>
+            <p class="contact-info-card__subtitle">Residential &amp; Commercial HVAC/R, Radiant Heat, Snow Melt &amp; Refrigeration</p>
 
             <div class="info-blocks">
 
@@ -1827,11 +1881,11 @@
                     <label for="serviceType" class="form-label">Service Needed <span class="req">*</span></label>
                     <select id="serviceType" name="serviceType" class="form-control" required>
                       <option value="">Select Service Type...</option>
-                      <option value="Heating Repair or Installation">Heating Repair or Installation</option>
+                      <option value="Heating, Radiant Heat or Snow Melt">Heating, Radiant Heat or Snow Melt</option>
                       <option value="A/C Repair or Installation">A/C Repair or Installation</option>
+                      <option value="Restaurant Refrigeration / Commercial HVAC/R">Restaurant Refrigeration / Commercial HVAC/R</option>
+                      <option value="Indoor Air Quality / Ductwork / Controls">Thermostat, Air Quality or Ductwork</option>
                       <option value="Seasonal Maintenance / Tune-Up">Seasonal Maintenance / Tune-Up</option>
-                      <option value="Indoor Air Quality / Ductwork / Commercial">Thermostat, Air Quality or Ductwork</option>
-                      <option value="Light Commercial HVAC Service">Light Commercial HVAC Service</option>
                       <option value="New System Estimate / Second Opinion">New System Estimate / Second Opinion</option>
                       <option value="Other Inquiry">Other Inquiry</option>
                     </select>
@@ -1848,7 +1902,7 @@
                   <!-- Message / System Details -->
                   <div class="form-group form-group--full" id="group-message">
                     <label for="message" class="form-label">System Details or How We Can Help <span class="req">*</span></label>
-                    <textarea id="message" name="message" class="form-control" placeholder="Tell us about your furnace, A/C, or comfort issue (e.g., noises, error codes, age of unit)..." maxlength="2000" required></textarea>
+                    <textarea id="message" name="message" class="form-control" placeholder="Tell us about your furnace, A/C, radiant/snow melt system, or commercial refrigeration issue (e.g., symptoms, error codes, equipment type)..." maxlength="2000" required></textarea>
                     <span class="form-error">Please briefly describe how we can help you.</span>
                   </div>
                 </div>
@@ -1917,7 +1971,7 @@
             <img src="logo.svg" width="1185" height="544" loading="lazy" alt="Quality Heating &amp; Air Logo" />
           </div>
           <p>
-            Dependable residential and light commercial heating, cooling, and indoor air quality across the Wasatch Front and Mountain Communities—dispatched locally from South Salt Lake.
+            Dependable residential and light commercial HVAC/R, radiant heat, hydronic snow melt, and restaurant refrigeration across the Wasatch Front and Mountain Communities—dispatched locally from South Salt Lake.
           </p>
         </div>
 
@@ -1925,7 +1979,7 @@
           <h4 class="footer-heading">Navigation</h4>
           <ul class="footer-links">
             <li><a href="#top">Back to Top</a></li>
-            <li><a href="#services">HVAC Services</a></li>
+            <li><a href="#services">HVAC/R &amp; Hydronic Services</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#service-area">Utah Service Area</a></li>
             <li><a href="#contact">Schedule Service</a></li>
@@ -1948,7 +2002,7 @@
 
       <div class="footer-bottom">
         <p>&copy; <span id="current-year">2026</span> Quality Heating &amp; Air. All Rights Reserved.</p>
-        <p>Residential &amp; Light Commercial HVAC &bull; <a href="tel:8014741089">(801) 474-1089</a></p>
+        <p>Residential &amp; Light Commercial HVAC/R &bull; Snow Melt &bull; Radiant Heat &bull; Refrigeration &bull; <a href="tel:8014741089">(801) 474-1089</a></p>
       </div>
     </div>
   </footer>
