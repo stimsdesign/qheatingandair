@@ -1,0 +1,26 @@
+# --- Secondary Domain Redirects to Primary ---
+
+# qheatandair.com -> utahqualityheatingandair.com
+https://qheatandair.com/*         https://utahqualityheatingandair.com/:splat 301!
+http://qheatandair.com/*          https://utahqualityheatingandair.com/:splat 301!
+https://www.qheatandair.com/*     https://utahqualityheatingandair.com/:splat 301!
+http://www.qheatandair.com/*      https://utahqualityheatingandair.com/:splat 301!
+
+# qheatingandair.com -> utahqualityheatingandair.com
+https://qheatingandair.com/*      https://utahqualityheatingandair.com/:splat 301!
+http://qheatingandair.com/*       https://utahqualityheatingandair.com/:splat 301!
+https://www.qheatingandair.com/*  https://utahqualityheatingandair.com/:splat 301!
+http://www.qheatingandair.com/*   https://utahqualityheatingandair.com/:splat 301!
+
+# slcqualityheatingandair.com -> utahqualityheatingandair.com
+https://slcqualityheatingandair.com/*      https://utahqualityheatingandair.com/:splat 301!
+http://slcqualityheatingandair.com/*       https://utahqualityheatingandair.com/:splat 301!
+https://www.slcqualityheatingandair.com/*  https://utahqualityheatingandair.com/:splat 301!
+http://www.slcqualityheatingandair.com/*   https://utahqualityheatingandair.com/:splat 301!
+
+
+# slcqualitypro.com -> utahqualityheatingandair.com
+https://slcqualitypro.com/*      https://utahqualityheatingandair.com/:splat 301!
+http://slcqualitypro.com/*       https://utahqualityheatingandair.com/:splat 301!
+https://www.slcqualitypro.com/*  https://utahqualityheatingandair.com/:splat 301!
+http://www.slcqualitypro.com/*   https://utahqualityheatingandair.com/:splat 301!
